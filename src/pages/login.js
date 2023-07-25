@@ -15,7 +15,9 @@ const LoginPage = () => {
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
           <GoogleOutlined />
-          <GithubOutlined />
+          <GithubOutlined onClick={() => signIn("github", {
+            callbackUrl: 'http://localhost:3000/'
+          })} />
         </div>
         <hr />
         <form>
@@ -23,9 +25,7 @@ const LoginPage = () => {
           <input type="email" />
           <label htmlFor="">Your Password</label>
           <input type="password" />
-          <Button onClick={() => signIn("github", {
-            callbackUrl: 'http://localhost:3000/'
-          })}>Login</Button>
+          <Button >Login</Button>
         </form>
       </div>
     </div>
